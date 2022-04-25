@@ -19,9 +19,9 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await apiService.login({ email, password });
+      await apiService.loginCompany({ email, password });
       const id = 23234123412535;
-      navigate(`/applications/${id}`);
+      navigate(`/offers/${id}`);
     } catch (error) {
       console.log(error);
     }
@@ -34,7 +34,7 @@ export default function Login() {
         <form onSubmit={handleSubmit}>
           <input type="email" name="email" placeholder="E-mail" value={email} onChange={handleEmail}/>
           <input type="password" name="password" placeholder="*********" value={password} onChange={handlePassword} />
-          <button type="submit">Login</button>
+          <button type="submit">Login Company</button>
         </form>
       </div>
     </>
