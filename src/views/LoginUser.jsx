@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '../context/auth.context'
 
 export default function Login() {
@@ -23,7 +23,7 @@ export default function Login() {
     try {
       loginUser({ email, password })
         .then(() => {
-          navigate('/')
+          navigate('/homeUser')
         })
         .catch((error) => {
           const errorDescription = error.response.data.message
@@ -36,6 +36,7 @@ export default function Login() {
 
   return (
     <>
+      <Link to="/">Home</Link>
       <div>Login User</div>
       <div className="form">
         <form onSubmit={handleSubmit}>
@@ -59,5 +60,5 @@ export default function Login() {
         </form>
       </div>
     </>
-  )
+  );
 }

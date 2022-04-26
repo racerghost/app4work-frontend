@@ -7,9 +7,9 @@ class ApiService {
     });
 
     // Automatically set JWT token in the headers for every request
-    this.api.interceptors.request.use(config => {
+    this.api.interceptors.request.use((config) => {
       // Retrieve the JWT token from the local storage
-      const storedToken = localStorage.getItem('authToken');
+      const storedToken = localStorage.getItem("authToken");
 
       if (storedToken) {
         config.headers = { Authorization: `Bearer ${storedToken}` };
@@ -20,7 +20,7 @@ class ApiService {
   }
 
   verify = () => {
-    return this.api.get('/auth/verify');
+    return this.api.get("/auth/verify");
   };
 
   loginUser = ({ email, password }) => {
@@ -77,6 +77,35 @@ class ApiService {
       workArea,
       size,
     });
+  };
+
+  addOffer = ({
+    companyId,
+    workArea,
+    specificArea,
+    salary,
+    active,
+    title,
+    description,
+  }) => {
+    return this.api.post("/offer", {
+      workArea,
+      specificArea,
+      salary,
+      active,
+      title,
+      description,
+    });
+  };
+  getOffersByCompany = (id) => {
+    return this.api.get(`/offer/${id}`);
+  };
+  getOffers = () => {
+    return this.api.get("/offer");
+  };
+
+  getApplicationsByUser = () => {
+    return this.api.get("/users/myapplications");
   };
 
   getUsers = () => {

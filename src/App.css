@@ -37,7 +37,7 @@
   }
 }
 
-link {
+.link {
 
   margin: 20px;
   color: black;
@@ -45,11 +45,11 @@ link {
 
 }
 
-li {
+.li {
   margin: 20px;
 }
 
-li a {
+.li a {
     color: black;
     text-decoration: none;
 }

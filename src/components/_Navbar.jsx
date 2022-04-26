@@ -19,8 +19,9 @@ export default function Navbar() {
           <Link to="/loginCompany">Login Company</Link>
           <Link to="/signupCompany">Sign up Company</Link>
           <Link to="/signupUser">Sign up User</Link>
+          
         </>
       )}
     </>
-  )
+  );
 }
