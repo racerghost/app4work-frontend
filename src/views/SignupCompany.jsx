@@ -1,71 +1,69 @@
 import React, { useState } from 'react'
-import apiService from "../services/apiService";
-import { useNavigate } from "react-router-dom";
+import apiService from '../services/apiService'
+import { useNavigate } from 'react-router-dom'
 
 export default function SignupCompany() {
   // un state para cada campo del formulario
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const [name, setName] = useState("");
-  const [location, setLocation] = useState("");
-  const [workArea, setWorkArea] = useState("");
-  const [size, setSize] = useState("");
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState('')
+  const [name, setName] = useState('')
+  const [location, setLocation] = useState('')
+  const [workArea, setWorkArea] = useState('')
+  const [size, setSize] = useState('')
 
   // un handleX para cada campo del formulario
 
   const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
+    setEmail(e.target.value)
+  }
 
   const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
+    setPassword(e.target.value)
+  }
   const handleUsername = (e) => {
-    setUsername(e.target.value);
-  };
+    setUsername(e.target.value)
+  }
 
   const handleName = (e) => {
-    setName(e.target.value);
-  };
+    setName(e.target.value)
+  }
   const handleLocation = (e) => {
-    setLocation(e.target.value);
-  };
+    setLocation(e.target.value)
+  }
 
   const handleWorkArea = (e) => {
-    setWorkArea(e.target.value);
-  };
+    setWorkArea(e.target.value)
+  }
   const handleSize = (e) => {
-    setSize(e.target.value);
-  };
+    setSize(e.target.value)
+  }
 
-  
   // un handleSubmit para mandar al apiService (prepara ruta apiService)
   // navigate para redigir login
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        await apiService.signupCompany({
-          email,
-          password,
-          username,
-          name,
-          location,
-          workArea,
-          size,
-        });
-        navigate(`/loginCompany`);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await apiService.signupCompany({
+        email,
+        password,
+        username,
+        name,
+        location,
+        workArea,
+        size,
+      })
+      navigate(`/loginCompany`)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
-      <div>Signup</div>
+      <div>Signup company</div>
       <div className="form">
         <form onSubmit={handleSubmit}>
           <input
@@ -122,5 +120,5 @@ export default function SignupCompany() {
         </form>
       </div>
     </>
-  );
+  )
 }

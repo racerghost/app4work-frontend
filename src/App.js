@@ -1,5 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { AuthProviderWrapper } from './context/auth.context';
 import Home from "./views/_Counter";
 import UserList from "./views/UserList";
 import SignupCompany from "./views/SignupCompany";
@@ -13,6 +14,7 @@ function App() {
   
   return (
     <div className="App">
+      <AuthProviderWrapper>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,6 +25,7 @@ function App() {
         <Route path="/admin/users" element={<UserList />} />
         <Route path="/applications/:appId" element={<UserApplications />} />
       </Routes>
+      </AuthProviderWrapper>
     </div>
   );
 }

@@ -5,7 +5,23 @@ class ApiService {
     this.api = axios.create({
       baseURL: "http://localhost:5005",
     });
+
+    // Automatically set JWT token in the headers for every request
+    this.api.interceptors.request.use(config => {
+      // Retrieve the JWT token from the local storage
+      const storedToken = localStorage.getItem('authToken');
+
+      if (storedToken) {
+        config.headers = { Authorization: `Bearer ${storedToken}` };
+      }
+
+      return config;
+    });
   }
+
+  verify = () => {
+    return this.api.get('/auth/verify');
+  };
 
   loginUser = ({ email, password }) => {
     return this.api.post("/auth/loginUser", { email, password });
