@@ -5,7 +5,7 @@ export default function OfferCard(props) {
   return (
     <>
       <div>
-        <div>{application}</div>
+        {/* <div>{application}</div> */}
         <div>{application.offerId.title}</div>
         <div>{application.offerId.description}</div>
         <div>{application.offerId.workArea}</div>

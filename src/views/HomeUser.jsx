@@ -19,7 +19,7 @@ export default function HomeUser() {
   return (
     <>
       <div>
-        <h2>¡Hola {name}!</h2>
+        <h2>¡ Hola {name} !</h2>
       </div>
       <div>
         <h2>Has aplicado a estas ofertas de empleo:</h2>

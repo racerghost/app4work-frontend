@@ -100,6 +100,11 @@ class ApiService {
   getOffersByCompany = (id) => {
     return this.api.get(`/offer/${id}`);
   };
+
+  getOffersApplications = (id) => {
+    return this.api.get(`/offer/applications/${id}`);
+  };
+
   getOffers = () => {
     return this.api.get("/offer");
   };
@@ -127,9 +132,9 @@ class ApiService {
     return this.api.post("/company", body);
   };
 
-  createJobApplication = (id) => {
-    return this.api.post(`/users/${id}`);
-  }
+  createJobApplication = (offerId, companyId) => {
+    return this.api.post(`/users/${offerId}/${companyId}`);
+  };
 }
 
 const apiService = new ApiService();

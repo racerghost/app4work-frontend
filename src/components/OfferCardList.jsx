@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import React, { useState, useContext } from 'react'
+import { useNavigate } from "react-router-dom";
 import apiService from '../services/apiService'
+import { AuthContext } from "../context/auth.context";
 
 export default function OfferCardList(props) {
+  const { user } = useContext(AuthContext);
   const { offer } = props
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isApplied, setApplication] = useState(false)
   const handleApplication = () => {
     try {
-      apiService.createJobApplication(offer._id)
+      apiService.createJobApplication(offer._id, offer.companyId._id)
+      console.log(offer.companyId._id);
       setApplication(true)
     } catch (err) {
       console.log(err)
@@ -28,15 +31,24 @@ export default function OfferCardList(props) {
         <div>{offer.workArea}</div>
         <div>
           {offer.active
-            ? 'Active offer'
-            : 'This job is not active at the moment.'}
+            ? "Active offer"
+            : "This job is not active at the moment."}
         </div>
         <div>{offer.publicationDate}</div>
-        {!isApplied && (
-          <button onClick={handleApplication}>Apply to this job</button>
+
+        {user.name != null && (
+          <>
+            <button onClick={() => navigate(`/offerApplications/${offer._id}`)}>
+              View Offer Applications
+            </button>
+          </>
         )}
-        {isApplied && <button>You have already applied to this job.</button>}
+        {user.name == null && (
+          <>
+            <button onClick={handleApplication}>Add application</button>
+          </>
+        )}
       </div>
     </>
-  )
+  );
 }

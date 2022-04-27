@@ -5,6 +5,7 @@ import HomeCompany from "./views/HomeCompany";
 import AddOffer from "./views/AddOffer";
 import OfferList from "./views/OfferList";
 import OfferListUsers from "./views/OfferListUsers";
+import OfferApplications from "./views/OfferApplications";
 import HomeUser from "./views/HomeUser";
 import UserList from "./views/UserList";
 import SignupCompany from "./views/SignupCompany";
@@ -20,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <AuthProviderWrapper>
-        <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Splash />} />
           <Route path="/homeCompany" element={<HomeCompany />} />
@@ -34,6 +35,7 @@ function App() {
           <Route path="/admin/offers" element={<OfferList />} />
           <Route path="/admin/users" element={<UserList />} />
           <Route path="/applications/:appId" element={<UserApplications />} />
+          <Route path="/offerApplications/:id" element={<OfferApplications />} />
         </Routes>
       </AuthProviderWrapper>
     </div>
