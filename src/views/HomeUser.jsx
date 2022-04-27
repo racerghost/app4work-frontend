@@ -1,32 +1,30 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
-import UserApplications from "../views/UserApplications";
+import React, { useContext, useState, useEffect } from 'react'
+import { AuthContext } from '../context/auth.context'
+import UserApplications from '../views/UserApplications'
 
 export default function HomeUser() {
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-  
+  const { isLoggedIn, user } = useContext(AuthContext)
+  const [name, setName] = useState('')
+
+  useEffect(() => {
+    try {
+      if (isLoggedIn) {
+        setName(user.username)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }, [])
+
   return (
     <>
-      {isLoggedIn && (
-        <>
-          <button onClick={logOutUser}>Logout</button>
-          <Link to="/">Home</Link>
-          <span>Hola : {user.username ? user.username : user.name}</span>
-          <div>
-            <h1>HOLA Usuari: {user.username}</h1>
-          </div>
-          <div>
-            <h2>Estas son tus aplicaciones actuales</h2>
-            <UserApplications />
-          </div>
-        </>
-      )}
-      {!isLoggedIn && (
-        <>
-          <Link to="/">Home</Link>
-        </>
-      )}
+      <div>
+        <h2>¡Hola {name}!</h2>
+      </div>
+      <div>
+        <h2>Has aplicado a estas ofertas de empleo:</h2>
+        <UserApplications />
+      </div>
     </>
-  );
+  )
 }

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import apiService from '../services/apiService'
 import OfferCardList from '../components/OfferCardList'
 
-export default function OfferList() {
+export default function OfferListUsers() {
   const [offers, setOffers] = useState([])
 
   const getOffers = async () => {
     try {
-      const offers = await apiService.getOffers()
+      const offers = await apiService.getOffersUsers()
       setOffers(offers.data)
       console.log(offers.data)
     } catch (error) {

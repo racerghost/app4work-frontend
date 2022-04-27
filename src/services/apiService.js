@@ -103,6 +103,9 @@ class ApiService {
   getOffers = () => {
     return this.api.get("/offer");
   };
+  getOffersUsers = () => {
+    return this.api.get("/offer/all");
+  };
 
   getApplicationsByUser = () => {
     return this.api.get("/users/myapplications");
@@ -123,6 +126,10 @@ class ApiService {
   createCompany = (body) => {
     return this.api.post("/company", body);
   };
+
+  createJobApplication = (id) => {
+    return this.api.post(`/users/${id}`);
+  }
 }
 
 const apiService = new ApiService();

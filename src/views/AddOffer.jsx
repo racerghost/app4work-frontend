@@ -1,51 +1,52 @@
-import "../App.css";
-import React, { useState, useContext } from "react";
-import apiService from "../services/apiService";
-import { useNavigate, Link } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
+import '../App.css'
+import React, { useState, useContext } from 'react'
+import apiService from '../services/apiService'
+import { useNavigate, Link } from 'react-router-dom'
+import { AuthContext } from '../context/auth.context'
 
 export default function AddOffer() {
   // un state para cada campo del formulario
-  const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { user } = useContext(AuthContext)
+  const navigate = useNavigate()
 
-  const [companyId] = useState(user._id);
-  const [workArea, setWorkArea] = useState("");
-  const [specificArea, setSpecificArea] = useState("");
-  const [salary, setSalary] = useState("");
-  const [active, setActive] = useState();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [companyId] = useState(user._id)
+  const [workArea, setWorkArea] = useState('')
+  const [specificArea, setSpecificArea] = useState('')
+  const [salary, setSalary] = useState('')
+  const [active, setActive] = useState(true)
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
 
   // un handleX para cada campo del formulario
 
   const handleWorkArea = (e) => {
-    setWorkArea(e.target.value);
-  };
+    setWorkArea(e.target.value)
+  }
 
   const handleSpecificArea = (e) => {
-    setSpecificArea(e.target.value);
-  };
+    setSpecificArea(e.target.value)
+  }
   const handleSalary = (e) => {
-    setSalary(e.target.value);
-  };
+    setSalary(e.target.value)
+  }
 
   const handleActive = (e) => {
-    setActive(e.target.value);
-  };
+    setActive(e.target.checked)
+    console.log(active)
+  }
   const handleTitle = (e) => {
-    setTitle(e.target.value);
-  };
+    setTitle(e.target.value)
+  }
 
   const handleDescription = (e) => {
-    setDescription(e.target.value);
-  };
+    setDescription(e.target.value)
+  }
 
   // un handleSubmit para mandar al apiService (prepara ruta apiService)
   // navigate para redigir login
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       await apiService.addOffer({
         companyId,
@@ -55,16 +56,16 @@ export default function AddOffer() {
         active,
         title,
         description,
-      });
-      navigate(`/homeCompany`);
+      })
+      navigate(`/homeCompany`)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
 
   return (
     <>
-      <Link to="/HomeCompany">Home</Link>
+      <Link to="/homeCompany">Home</Link>
       <div>
         {/* <h1>{user._id}</h1> */}
         <h2>Add new offer</h2>
@@ -95,8 +96,8 @@ export default function AddOffer() {
           <input
             type="checkbox"
             name="active"
-            checked="true"
             value={active}
+            defaultChecked={active}
             onChange={handleActive}
           />
           <input
@@ -117,5 +118,5 @@ export default function AddOffer() {
         </form>
       </div>
     </>
-  );
+  )
 }

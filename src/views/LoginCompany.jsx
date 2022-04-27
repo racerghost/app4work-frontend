@@ -22,7 +22,7 @@ export default function Login() {
     try {
       loginCompany({ email, password })
         .then(() => {
-          navigate('/HomeCompany')
+          navigate('/homeCompany')
         })
         .catch((error) => {
           const errorDescription = error.response.data.message
@@ -59,5 +59,5 @@ export default function Login() {
         </form>
       </div>
     </>
-  );
+  )
 }
