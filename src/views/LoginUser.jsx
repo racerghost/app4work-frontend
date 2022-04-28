@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '../context/auth.context'
+import "../styles/style.css";
 
 export default function Login() {
   const navigate = useNavigate()
@@ -36,8 +37,9 @@ export default function Login() {
 
   return (
     <>
-      <Link to="/">Home</Link>
-      <div>Login User</div>
+      <div>
+        <h1>Please, enter your login data as user</h1>
+      </div>
       <div className="form">
         <form onSubmit={handleSubmit}>
           <input

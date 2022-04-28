@@ -12,7 +12,6 @@ export default function HomeCompany() {
       {isLoggedIn && (
         <>
           <button onClick={logOutUser}>Logout</button>
-          <Link to="/">Home</Link>
           <div>
             <h1>HOLA Companyia: {user.name}</h1>
           </div>
@@ -26,7 +25,7 @@ export default function HomeCompany() {
       )}
       {!isLoggedIn && (
         <>
-          <Link to="/">Home</Link>
+          {/* <Link to="/">Home</Link> */}
         </>
       )}
     </>
