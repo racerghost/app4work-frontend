@@ -93,6 +93,7 @@ export default function AddOffer() {
             value={salary}
             onChange={handleSalary}
           />
+          <label>Is the offer currently active</label>
           <input
             type="checkbox"
             name="active"

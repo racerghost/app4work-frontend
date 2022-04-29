@@ -1,86 +1,93 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
-.logoff-navbar{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logoff-navbar {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
 .logoff-navbar-sup {
   padding: 10%;
+  height: 50vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("https://media.istockphoto.com/photos/black-businesswoman-talking-on-cellphone-and-using-laptop-in-office-picture-id1198620546");
-  
+  background-image: url('../img/bg_user.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: url("https://media.istockphoto.com/photos/black-businesswoman-talking-on-cellphone-and-using-laptop-in-office-picture-id1198620546"); */
+
 }
 
 .logoff-navbar-inf {
   padding: 10%;
   width: 100vw;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("https://media.istockphoto.com/photos/futuristic-office-picture-id1187179171");
-  
+  background-image: url('../img/bg_company.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: url("https://media.istockphoto.com/photos/futuristic-office-picture-id1187179171"); */
 }
 
 
 
 .button {
-    text-decoration: none;
-    border: 1px;
-    width: 400px;
-    height: 100px;
-    
-    position: relative;
-    background: #f3f0f1;
-    margin-bottom: 25px;
-    border-radius: 32px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.1s ease-in-out;
-    line-height: 100px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 32px;
-    font-weight: semibold;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-      6px 6px 10px rgba(0, 0, 0, 0.2);
-    }
+  text-decoration: none;
+  border: 1px;
+  width: 80vw;
+  height: 100px;
+  position: relative;
+  background: #f3f0f1;
+  margin-bottom: 25px;
+  border-radius: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  line-height: 100px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: semibold;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+    6px 6px 10px rgba(0, 0, 0, 0.2);
+}
 
- .button:hover {
-    background: #cfcdce;
-    box-shadow: -8px -8px 14px rgba(255, 255, 255, 0.8),
+.button:hover {
+  background: #cfcdce;
+  box-shadow: -8px -8px 14px rgba(255, 255, 255, 0.8),
     8px 8px 14px rgba(0, 0, 0, 0.2);
-  }
-    
-.form {
+}
 
-  display:flex;
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
   /* background-color: #15172b; */
   border-radius: 20px;
   box-sizing: border-box;
-  height: 300px;
-  padding: 20px;
   width: 320px;
 
 }
 
-h1{
- 
+h1 {
+
   color: rgb(0, 0, 0);
   font-family: sans-serif;
   font-size: 36px;
@@ -91,24 +98,24 @@ h1{
 }
 
 input {
-  margin:10px;
+  margin: 10px;
   background-color: #303245;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
   color: #eee;
   font-size: 18px;
-  height: 30%;
+  height: 60px;
   outline: 0;
   padding: 4px 20px 0;
-  width: 100%;
+  width: 90vw;
 }
 
-.form-field{
+.form-field {
   margin-top: 40px;
 }
 
-button{
+button {
   background-color: #08d;
   border-radius: 12px;
   border: 0;
@@ -117,12 +124,27 @@ button{
   cursor: pointer;
   font-size: 18px;
   height: 50px;
-  margin-top: 38px;
-
+  margin: 15px auto;
+  display: block;
   text-align: center;
-  width: 100%;
+  width: 90vw;
 }
 
 .submit:active {
   background-color: #06b;
+}
+
+.offer-card {
+  background-color: #E7E7E7;
+  width: 95vw;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  display: block;
+  margin: 20px auto;
+}
+
+.centered {
+  margin: 10px auto;
+  text-align: center;
 }

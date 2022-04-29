@@ -21,7 +21,6 @@ export default function OfferList() {
 
   return (
     <div>
-      <div>Offer List</div>
       {offers.map((offer, i) => {
         return <OfferCardList key={i} offer={offer} />
       })}

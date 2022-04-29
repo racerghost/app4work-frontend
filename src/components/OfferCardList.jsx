@@ -1,17 +1,17 @@
 import React, { useState, useContext } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 import apiService from '../services/apiService'
-import { AuthContext } from "../context/auth.context";
+import { AuthContext } from '../context/auth.context'
 
 export default function OfferCardList(props) {
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext)
   const { offer } = props
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const [isApplied, setApplication] = useState(false)
   const handleApplication = () => {
     try {
       apiService.createJobApplication(offer._id, offer.companyId._id)
-      console.log(offer.companyId._id);
+      console.log(offer.companyId._id)
       setApplication(true)
     } catch (err) {
       console.log(err)
@@ -23,18 +23,23 @@ export default function OfferCardList(props) {
   // setApplication(true)
   return (
     <>
-      <div>
-        <div>{offer.title}</div>
-        <div>{offer.description}</div>
-        <div>{offer.specificArea}</div>
-        <div>{offer.salary}</div>
-        <div>{offer.workArea}</div>
-        <div>
+      <div className="offer-card">
+        <h2>{offer.title}</h2>
+        <h4>{offer.description}</h4>
+        <br />
+        <p>Conditions:</p>
+        <br />
+        <ul>
+          <li>{offer.specificArea}</li>
+          <li>{offer.salary}</li>
+          <li>{offer.workArea}</li>
+        </ul>
+        <p>
           {offer.active
-            ? "Active offer"
-            : "This job is not active at the moment."}
-        </div>
-        <div>{offer.publicationDate}</div>
+            ? 'Active offer'
+            : 'This job is not active at the moment.'}
+        </p>
+        <div>Offer published: {offer.publicationDate}</div>
 
         {user.name != null && (
           <>
@@ -50,5 +55,5 @@ export default function OfferCardList(props) {
         )}
       </div>
     </>
-  );
+  )
 }

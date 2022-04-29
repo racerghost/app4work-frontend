@@ -1,35 +1,29 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
-import OfferList from "../views/OfferList";
-
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../context/auth.context'
+import OfferList from '../views/OfferList'
 
 export default function HomeCompany() {
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext)
+  const navigate = useNavigate()
   return (
     <>
       {isLoggedIn && (
         <>
-          <button onClick={logOutUser}>Logout</button>
           <div>
-            <h1>HOLA Companyia: {user.name}</h1>
+            <h4>Company: {user.name}</h4>
+            <br />
           </div>
           <div>
-            <h2>Estas son tus ofertas actuales</h2>
+            <h2>These are your current offers:</h2>
+            <br />
             <OfferList />
           </div>
 
-          <button onClick={() => navigate("/addOffer")}>Add New Offer</button>
+          <button onClick={() => navigate('/addOffer')}>Add New Offer</button>
         </>
       )}
-      {!isLoggedIn && (
-        <>
-          {/* <Link to="/">Home</Link> */}
-        </>
-      )}
+      {!isLoggedIn && <>{/* <Link to="/">Home</Link> */}</>}
     </>
-  );
+  )
 }
-
-

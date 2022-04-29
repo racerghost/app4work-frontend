@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '../context/auth.context'
-import "../styles/style.css";
+import '../styles/style.css'
 
 export default function Login() {
   const navigate = useNavigate()
@@ -37,7 +37,7 @@ export default function Login() {
   return (
     <>
       <div>
-        <h1>Please, enter your login data as company</h1>
+        <h3 className="centered">Please, enter your login data as a company</h3>
       </div>
       <div className="form">
         <form onSubmit={handleSubmit}>
@@ -59,9 +59,11 @@ export default function Login() {
           />
           {/* Pintem l'error si la funció de login dona error, sino, res */}
           {errorMessage && <p className="error-message">{errorMessage}</p>}
-          <button className="submit" type="submit">Login Company</button>
+          <button className="submit" type="submit">
+            Login Company
+          </button>
         </form>
       </div>
     </>
-  );
+  )
 }
