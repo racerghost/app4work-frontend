@@ -6,10 +6,11 @@ class ApiService {
       baseURL: "https://app4work-backend.herokuapp.com",
       headers: {
         "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         "Content-Type": "application/json",
       },
-      "Access-Control-Allow-Credentials": true,
-      "crossingorigin": true,
+      "Access-Control-Allow-Credentials": false,
+      crossingorigin: true,
     });
 
     // Automatically set JWT token in the headers for every request
