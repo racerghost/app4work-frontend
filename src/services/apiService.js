@@ -8,6 +8,7 @@ class ApiService {
         "Access-Control-Allow-Origin": "https://app4work-backend.herokuapp.com",
         "Content-Type": "application/json",
       },
+      "Access-Control-Allow-Credentials": true,
     });
 
     // Automatically set JWT token in the headers for every request
