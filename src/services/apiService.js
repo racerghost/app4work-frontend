@@ -7,8 +7,7 @@ class ApiService {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
-      },
-      withCredentials: true,
+      }
     });
 
     // Automatically set JWT token in the headers for every request
