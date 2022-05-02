@@ -11,7 +11,6 @@ export default function OfferCardList(props) {
   const handleApplication = () => {
     try {
       apiService.createJobApplication(offer._id, offer.companyId._id)
-      console.log(offer.companyId._id)
       setApplication(true)
     } catch (err) {
       console.log(err)
@@ -28,18 +27,18 @@ export default function OfferCardList(props) {
         <h4>{offer.description}</h4>
         <br />
         <p>Conditions:</p>
-        <br />
+   
         <ul>
-          <li>{offer.specificArea}</li>
-          <li>{offer.salary}</li>
-          <li>{offer.workArea}</li>
+          <li>Work Area: {offer.workArea}</li>
+          <li>Specific Area: {offer.specificArea}</li>
+          <li>Salary: {offer.salary}</li>
         </ul>
         <p>
+          <div>Offer published: {offer.publicationDate}</div>
           {offer.active
-            ? 'Active offer'
-            : 'This job is not active at the moment.'}
+            ? "Active offer"
+            : "This job is not active at the moment."}
         </p>
-        <div>Offer published: {offer.publicationDate}</div>
 
         {user.name != null && (
           <>
@@ -55,5 +54,5 @@ export default function OfferCardList(props) {
         )}
       </div>
     </>
-  )
+  );
 }

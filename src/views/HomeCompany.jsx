@@ -11,16 +11,15 @@ export default function HomeCompany() {
       {isLoggedIn && (
         <>
           <div>
-            <h4>Company: {user.name}</h4>
             <br />
           </div>
           <div>
-            <h2>These are your current offers:</h2>
+            <h2 className='centered'>These are your current offers</h2>
             <br />
             <OfferList />
           </div>
 
-          <button onClick={() => navigate('/addOffer')}>Add New Offer</button>
+          <button className="btn-addOffer" onClick={() => navigate('/addOffer')}>Add New Offer</button>
         </>
       )}
       {!isLoggedIn && <>{/* <Link to="/">Home</Link> */}</>}

@@ -11,19 +11,19 @@ export default function OfferCard(props) {
         <h4>{offerId.description}</h4>
         <br />
         <p>Conditions:</p>
-        <br />
+
         <ul>
-          <li>{offerId.specificArea}</li>
-          <li>{offerId.salary}</li>
-          <li>{offerId.workArea}</li>
+          <li>Work Area: {offerId.workArea}</li>
+          <li>Specific Area: {offerId.specificArea}</li>
+          <li>Salary: {offerId.salary}</li>
         </ul>
         <p>
           {offerId.active
-            ? 'Active offer'
-            : 'This job is not active at the moment.'}
+            ? "Active offer"
+            : "This job is not active at the moment."}
         </p>
         <div>Offer published: {offerId.publicationDate}</div>
       </div>
     </>
-  )
+  );
 }

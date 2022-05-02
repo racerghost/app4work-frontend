@@ -10,7 +10,7 @@ export default function OfferCardList(props) {
     <>
       <div>
         <br />
-        <h4>These users have applied to this offer:</h4>
+        <h4>These users have applied to this offer</h4>
         <br />
         <div className="offer-card">
           <h2>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import apiService from '../services/apiService'
-import { useNavigate, Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function SignupCompany() {
   // un state para cada campo del formulario
@@ -63,7 +63,7 @@ export default function SignupCompany() {
 
   return (
     <>
-      <Link to="/">Home</Link>
+      
       <div>Signup company</div>
       <div className="form">
         <form onSubmit={handleSubmit}>

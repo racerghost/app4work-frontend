@@ -28,8 +28,6 @@
   background-image: url('../img/bg_user.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-image: url("https://media.istockphoto.com/photos/black-businesswoman-talking-on-cellphone-and-using-laptop-in-office-picture-id1198620546"); */
-
 }
 
 .logoff-navbar-inf {
@@ -43,7 +41,6 @@
   background-image: url('../img/bg_company.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-image: url("https://media.istockphoto.com/photos/futuristic-office-picture-id1187179171"); */
 }
 
 
@@ -148,3 +145,59 @@ button {
   margin: 10px auto;
   text-align: center;
 }
+
+.btn-addOffer{
+background-color: rgb(37, 132, 8);
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin: 15px auto;
+  display: block;
+  text-align: center;
+  width: 90vw;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .btn {
+  background-color: red;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:1vw; 
+}
+
+.btn-logOut{
+  background-color: rgb(38, 38, 39) !important;
+}
+
+.title{
+  margin: 3vh 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32pt;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li{
+  margin: 1vh;
+  
+}
+

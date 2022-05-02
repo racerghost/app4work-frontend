@@ -13,17 +13,24 @@ export default function Navbar() {
     <>
       {isLoggedIn && user.name != null && (
         <>
-          <Link to="/homeCompany">Home</Link>
-          <Link to="/admin/offers">My Job offers</Link>
-          <button onClick={logOutUser}>Logout Company</button>
+            <span className='title'>{user.name }</span>
+          <nav>
+            <Link className='btn' to="/homeCompany">Home</Link>
+            <Link className='btn' to="/admin/offers">My Job offers</Link>
+            <button className="btn btn-logOut" onClick={logOutUser}>Logout Company</button>
+          </nav>
         </>
       )}
 
       {isLoggedIn && user.name == null && (
         <>
-          <Link to="/homeUser">Home</Link>
-          <Link to="/user/offers">View New Job offers</Link>
-          <button onClick={logOutUser}>Logout User</button>
+            <span className='title'>{user.username}</span>
+          <nav>
+            <Link className='btn' to="/homeUser">Home</Link>
+            <Link className='btn' to="/user/offers">View New Job offers</Link>
+            <button className="btn btn-logOut" onClick={logOutUser}>Logout User</button>
+          </nav>
+          
         </>
       )}
 

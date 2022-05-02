@@ -3,7 +3,7 @@ import axios from 'axios';
 class ApiService {
   constructor() {
     this.api = axios.create({
-      baseURL: "http://localhost:5005",
+      baseURL: "https://app4work-backend.herokuapp.com",
     });
 
     // Automatically set JWT token in the headers for every request

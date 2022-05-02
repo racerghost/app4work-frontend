@@ -65,7 +65,6 @@ export default function AddOffer() {
 
   return (
     <>
-      <Link to="/homeCompany">Home</Link>
       <div>
         {/* <h1>{user._id}</h1> */}
         <h2>Add new offer</h2>
