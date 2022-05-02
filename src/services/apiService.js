@@ -9,7 +9,7 @@ class ApiService {
         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         "Content-Type": "application/json",
       },
-      withCredentials: true,
+      withCredentials: false,
       crossingorigin: true,
     });
 
