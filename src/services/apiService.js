@@ -4,13 +4,18 @@ class ApiService {
   constructor() {
     this.api = axios.create({
       baseURL: "https://app4work-backend.herokuapp.com",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
     });
 
     // Automatically set JWT token in the headers for every request
     this.api.interceptors.request.use((config) => {
       // Retrieve the JWT token from the local storage
       const storedToken = localStorage.getItem("authToken");
-
+      
       if (storedToken) {
         config.headers = { Authorization: `Bearer ${storedToken}` };
       }
