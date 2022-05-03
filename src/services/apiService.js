@@ -9,9 +9,9 @@ class ApiService {
         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
         "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
       },
-      withCredentials: false,
-      crossingorigin: true,
+     
     });
 
     // Automatically set JWT token in the headers for every request
@@ -20,7 +20,9 @@ class ApiService {
       const storedToken = localStorage.getItem("authToken");
       
       if (storedToken) {
-        config.headers = { Authorization: `Bearer ${storedToken}` };
+        config.headers = {
+          Authorization: `Bearer ${storedToken}`,
+        };
       }
 
       return config;
