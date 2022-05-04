@@ -4,16 +4,16 @@ class ApiService {
   constructor() {
     this.api = axios.create({
       baseURL: "https://app4work-backend.herokuapp.com",
-      statusCode:200,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
-        "Content-Type": "application/json",
-        // "Access-Control-Allow-Credentials": true,
-      },
-      withCredentials: false,
-      // crossingorigin: anonymous,
+      // statusCode:200,
+      // headers: {
+      //   "Access-Control-Allow-Origin": "*",
+      //   "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      //   "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
+      //   "Content-Type": "application/json",
+      //   // "Access-Control-Allow-Credentials": true,
+      // },
+      // withCredentials: false,
+      // // crossingorigin: anonymous,
     });
 
     // Automatically set JWT token in the headers for every request
