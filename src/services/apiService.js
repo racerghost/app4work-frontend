@@ -3,7 +3,7 @@ import axios from 'axios';
 class ApiService {
   constructor() {
     this.api = axios.create({
-      baseURL: "https://app4work-backend.herokuapp.com",
+      baseURL: "https://app4work-backend.herokuapp.com/auth/loginUser",
       headers: { "Access-Control-Allow-Origin": "*" },
       // statusCode:200,
       // headers: {
