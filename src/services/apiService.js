@@ -4,6 +4,7 @@ class ApiService {
   constructor() {
     this.api = axios.create({
       baseURL: "https://app4work-backend.herokuapp.com",
+      headers: { "Access-Control-Allow-Origin": "*" },
       // statusCode:200,
       // headers: {
       //   "Access-Control-Allow-Origin": "*",
